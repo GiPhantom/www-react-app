@@ -6,6 +6,7 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended"
+        "plugin:react-hooks/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -16,7 +17,15 @@ module.exports = {
     },
     "plugins": [
         "react"
+        "react-hooks"
     ],
     "rules": {
     }
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+    "eslint.enable": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.options": {
+   "configFile": "/Users/username/.eslintrc.json"
+}
 };
