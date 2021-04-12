@@ -3,10 +3,10 @@ import { Navbar, Nav, FormControl, Container, Form, Button } from 'react-bootstr
 import logo from './logo192.png';
 
 
-export default class Header extendes Component {
+export default class Header extends Component {
 	render() {
 		return (
-			<Navbar collapseOnSelect expend="md" bg="dark" varant="dark" >
+			<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
 				<Component>
 					<Navbar.Brand href="/" >
 						<img
