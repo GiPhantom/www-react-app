@@ -7,7 +7,7 @@ export default class Header extends Component {
 	render() {
 		return (
 			<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
-				<Component>
+				<Container>
 					<Navbar.Brand href="/" >
 						<img
 							src={logo}
@@ -34,7 +34,7 @@ export default class Header extends Component {
 							<Button variant="outline-info">Search</Button>
 						</Form>
 					</Navbar.Collapse>
-				</Component>
+				</Container>
 			</Navbar>
 			
 
