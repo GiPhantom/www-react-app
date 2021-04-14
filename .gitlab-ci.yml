@@ -17,6 +17,7 @@ install_dependencies:
     - yarn install
     - yarn build
     - mv build build_$env
+    - node --version
   artifacts:
     paths:
       - node_modules
@@ -27,6 +28,7 @@ install_dependencies:
         - yarn.lock
     paths:
       - node_modules
+      
 
 build_staging:
   extends: install_dependencies
