@@ -11,7 +11,9 @@ variables:
 
 
 install_dependencies:
-  image: node:14.15.0-stretch
+#  image: node:14.15.0-stretch
+  image: node:15.14.0
+  #npm install -g npm@7.9.0
   stage: build
   script:
     - yarn install
