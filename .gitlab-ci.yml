@@ -1,7 +1,6 @@
 stages:
   - build
   - deploy
-  - test
   - revert
 
 variables:
@@ -40,18 +39,6 @@ build_staging:
     REACT_APP_WEBSITE_PREFIX: "[branch=$CI_COMMIT_BRANCH] "
     PUBLIC_URL: "/$CI_COMMIT_BRANCH"
 
-test:
-  stage: deploy
-#  tags:
-#    - stagshell
-  script:
-    #- cp -r build /www/test-app/$CI_COMMIT_SHA
-    - cp -r build $deploy_subfolder/test-app/$CI_COMMIT_SHA
-    #- cp -Pv /www/html /www/test-app/$CI_COMMIT_SHA/prev-version
-    - cp -Pv /www/html $deploy_subfolder/test-app//$CI_COMMIT_SHA/prev-version
-    #- ln -fsnv /var/www/test-app/$CI_COMMIT_SHA /www/html
-    - ln -fsnv /var $deploy_subfolder/test-app//$CI_COMMIT_SHA /www/html
-  allow_failure: true
 
 deploy_staging:
   extends: deploy_prod
