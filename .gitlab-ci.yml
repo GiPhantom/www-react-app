@@ -45,9 +45,12 @@ test:
   tags:
     - stagshell
   script:
-    - cp -r build /www/test-app/$CI_COMMIT_SHA
-    - cp -Pv /www/html /www/test-app/$CI_COMMIT_SHA/prev-version
-    - ln -fsnv /var/www/test-app/$CI_COMMIT_SHA /www/html
+    #- cp -r build /www/test-app/$CI_COMMIT_SHA
+    - cp -r build $deploy_subfolder/$CI_COMMIT_SHA
+    #- cp -Pv /www/html /www/test-app/$CI_COMMIT_SHA/prev-version
+    - cp -Pv /www/html $deploy_subfolder/$CI_COMMIT_SHA/prev-version
+    #- ln -fsnv /var/www/test-app/$CI_COMMIT_SHA /www/html
+    - ln -fsnv /var $deploy_subfolder/$CI_COMMIT_SHA /www/html
   allow_failure: true
 
 deploy_staging:
