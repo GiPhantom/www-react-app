@@ -20,6 +20,8 @@ install_dependencies:
     - yarn build
     - mv build build_$env
     - node --version
+  tags:
+    - devel 
   artifacts:
     paths:
       - node_modules
@@ -56,6 +58,8 @@ deploy_prod:
   script:
     - cp -r build_$env $docker_html_path/test-app/${env}_$CI_COMMIT_SHA
     - ln -fsnv $docker_html_path/test-app/${env}_$CI_COMMIT_BEFORE_SHA $docker_html_path/test-app/${env}_$CI_COMMIT_SHA/prev-version || true
+  tags:
+    - devel
   only:
     - master
 
@@ -73,6 +77,8 @@ activate_prod:
   stage: deploy
   script:
     - ln -fsnv /var/www/test-app/${env}_$CI_COMMIT_SHA $docker_html_path/$deploy_subfolder
+  tags:
+    - devel
   when: manual
   only:
     - master
@@ -83,7 +89,8 @@ revert:
   script:
     - rm -rf $docker_html_path/$deploy_subfolder
     - cp -Pv $docker_html_path/test-app/${env}_$CI_COMMIT_BEFORE_SHA/prev-version $docker_html_path/html
-
+  tags:
+    - devel
 #two revert
 revert_previous:
   stage: revert
@@ -91,3 +98,5 @@ revert_previous:
   script:
     - rm -rf $docker_html_path/$deploy_subfolder
     - cp -Pv $docker_html_path/test-app/${env}_$CI_COMMIT_BEFORE_SHA/prev-version $docker_html_path/$deploy_subfolder
+  tags:
+    - devel
