@@ -1,12 +1,22 @@
+image: node:14.15.0-stretch
 stages:
   - build
-  - deploy
-  - revert
-
-variables:
-  docker_html_path: "/var/www"
-  env: prod
-  deploy_subfolder: html
+  - test
+install_dependencies:
+  stage: build
+  script: yarn install
+  artifacts:
+    paths:
+      - node_modules
+  cache:
+    key:
+      files:
+        - yarn.lock
+    paths:
+      - node_modules
+run_tests:
+ stage: test
+ script: CI=true yarn test
 
 
 
