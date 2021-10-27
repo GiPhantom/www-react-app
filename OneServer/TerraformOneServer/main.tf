@@ -1,5 +1,15 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
 provider "aws" {
   region = "us-east-1"
+  access_key = "AKIATPRW4WGGHWZZGG66"
+  secret_key = "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" 
 }
 
 
@@ -28,7 +38,7 @@ resource "aws_instance" "my_webserver" {
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.my_webserver.id]
   user_data = file("user_data.sh")
-  key_name = "id_rsa"
+  key_name = "monroi1"
   tags = {
     AMI =  "${data.aws_ami.ubuntu.id}"
     Name  = "ReactJS Server IP"

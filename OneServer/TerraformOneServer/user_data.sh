@@ -1,7 +1,7 @@
 #!/bin/bash -xe
 # exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 # cd /home/ubuntu/
-# git clone https://gitlab.com/entsupml/skillbox-deploy-blue-green
+# git clone https://gitlab.com/GiPhantom/www-react-app.git
 # curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 # echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 # sudo apt update -y && sudo apt install yarn -y

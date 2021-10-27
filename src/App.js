@@ -37,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <h1>Grocery List</h1>
+      <h2>Terraform</h2>
       <form onSubmit={handleSubmit}>
         <input
           className="input"
@@ -48,7 +49,6 @@ function App() {
         <button className="btn" type="submit">
           Add Items
         </button>
-	 <h2>Terraform</h2>
         <br></br>
         <br></br>
       </form>
