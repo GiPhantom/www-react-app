@@ -17,7 +17,8 @@ stages:
 run_tests:
  stage: test
  script: CI=true yarn test
-
+ tags:
+   - devel
 
 
   #install_dependencies:
