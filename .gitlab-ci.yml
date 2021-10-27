@@ -19,8 +19,8 @@ run_tests:
  script:
     - yarn install 
     - CI=true yarn test
-# tags:
- #  - devel
+ tags:
+   - devel
 
 
   #install_dependencies:
