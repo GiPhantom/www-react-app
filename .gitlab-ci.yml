@@ -16,7 +16,9 @@ stages:
 #      - node_modules
 run_tests:
  stage: test
- script: CI=true yarn test
+ script:
+    - yarn install 
+    - CI=true yarn test
  tags:
    - devel
 
