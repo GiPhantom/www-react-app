@@ -7,8 +7,6 @@ install_dependencies:
   stage: build
   script: 
     -yarn install
-    -yarn build
-
   tags:
    - devel
   artifacts:
@@ -22,9 +20,7 @@ install_dependencies:
       - node_modules
 run_tests:
  stage: test
- script:
-         #    - yarn install 
-    - CI=true yarn test
+ script: CI=true yarn test
  tags:
    - devel
 run linter:
