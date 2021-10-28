@@ -24,7 +24,11 @@ run_tests:
     - CI=true yarn test
  tags:
    - devel
-
+run linter:
+ stage: test
+ script: yarn run eslint src/**.js
+ tags:
+   - devel
 
   #install_dependencies:
 #  image: node:14.15.0-stretch
