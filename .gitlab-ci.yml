@@ -7,19 +7,19 @@ install_dependencies:
   script: yarn install
   tags:
    - devel
-     #  artifacts:
-  cache:
+  artifacts:
     paths:
       - node_modules
+  cashe:      
     key:
       files:
         - yarn.lock
-#    paths:
-#      - node_modules
+    paths:
+      - node_modules
 run_tests:
  stage: test
  script:
-    - yarn install 
+         #    - yarn install 
     - CI=true yarn test
  tags:
    - devel
