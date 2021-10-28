@@ -1,13 +1,13 @@
 image: node:15.14.0-stretch
 stages:
-#  - build
+  - build
   - test
-#install_dependencies:
-#  stage: build
-#  script: yarn install
-#  artifacts:
-#    paths:
-#      - node_modules
+install_dependencies:
+  stage: build
+  script: yarn install
+  artifacts:
+    paths:
+      - node_modules
 #   cache:
 #    key:
 #      files:
