@@ -5,8 +5,7 @@ stages:
 
 install_dependencies:
   stage: build
-  script: 
-    -yarn install
+  script: yarn install
   tags:
    - devel
   artifacts:
